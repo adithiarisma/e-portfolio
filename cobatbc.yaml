@@ -14,7 +14,7 @@ Resources:
       Properties:
         Name: "cobatbc" # Specify the name of your Lambda function
         Alias: "portfolio1" # Specify the alias for your Lambda function
-        CurrentVersion: "6" # Specify the current version of your Lambda function
+        CurrentVersion: "5" # Specify the current version of your Lambda function
         TargetVersion: "6" # Specify the version of your Lambda function to deploy
 # (Optional) In the Hooks section, specify a validation Lambda function to run during 
 # a lifecycle event. Replace "LifeCycleEvent" with BeforeAllowTraffic
