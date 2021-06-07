@@ -17,7 +17,7 @@ version: 0.2
 #         CurrentVersion: "6" # Specify the current version of your Lambda function
 #         TargetVersion: "6" # Specify the version of your Lambda function to deploy
 
-phases:
+# phases:
   # pre_build:
   #   commands:
   #      - npm install
