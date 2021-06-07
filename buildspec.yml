@@ -1,0 +1,38 @@
+# This is an appspec.yml template file for use with an AWS Lambda deployment in CodeDeploy.
+# The lines in this template starting with the hashtag symbol are 
+#   instructional comments and can be safely left in the file or 
+#   ignored.
+# For help completing this file, see the "AppSpec File Reference" in the  
+#   "CodeDeploy User Guide" at
+#   https://docs.aws.amazon.com/codedeploy/latest/userguide/app-spec-ref.html
+version: 0.2
+# In the Resources section specify the name, alias, 
+# target version, and (optional) the current version of your AWS Lambda function. 
+# Resources:
+#   - cobatbc: # Replace "MyFunction" with the name of your Lambda function 
+#       Type: AWS::Lambda::Function
+#       Properties:
+#         Name: "cobatbc" # Specify the name of your Lambda function
+#         Alias: "portfolio1" # Specify the alias for your Lambda function
+#         CurrentVersion: "6" # Specify the current version of your Lambda function
+#         TargetVersion: "6" # Specify the version of your Lambda function to deploy
+
+phases:
+  pre_build:
+    commands:
+       - npm install
+    build:
+    commands:
+       - npm run build
+
+artifacts:
+     files:
+       - '**/*'
+     discard-paths: no
+     base-directory: build
+  
+# (Optional) In the Hooks section, specify a validation Lambda function to run during 
+# a lifecycle event. Replace "LifeCycleEvent" with BeforeAllowTraffic
+# or AfterAllowTraffic. 
+
+
