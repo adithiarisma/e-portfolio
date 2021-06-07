@@ -16,6 +16,21 @@ Resources:
         Alias: "portfolio1" # Specify the alias for your Lambda function
         CurrentVersion: "6" # Specify the current version of your Lambda function
         TargetVersion: "6" # Specify the version of your Lambda function to deploy
+
+phases:
+  pre_build:
+    commands:
+       - npm install
+    build:
+    commands:
+        - npm run build
+
+artifacts:
+     files:
+       - '**/*'
+     discard-paths: no
+     base-directory: build
+  
 # (Optional) In the Hooks section, specify a validation Lambda function to run during 
 # a lifecycle event. Replace "LifeCycleEvent" with BeforeAllowTraffic
 # or AfterAllowTraffic. 
