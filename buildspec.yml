@@ -29,7 +29,7 @@ artifacts:
      files:
        - '**/*'
      discard-paths: no
-     base-directory: build
+    #  base-directory: build
   
 # (Optional) In the Hooks section, specify a validation Lambda function to run during 
 # a lifecycle event. Replace "LifeCycleEvent" with BeforeAllowTraffic
