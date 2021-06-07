@@ -18,12 +18,12 @@ version: 0.2
 #         TargetVersion: "6" # Specify the version of your Lambda function to deploy
 
 phases:
-  pre_build:
-    commands:
-       - npm install
-    build:
-    commands:
-       - npm run build
+  # pre_build:
+  #   commands:
+  #      - npm install
+  #   build:
+  #   commands:
+  #      - npm run build
 
 artifacts:
      files:
