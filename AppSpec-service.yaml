@@ -9,14 +9,16 @@ version: 0.0
 # In the Resources section specify the name, alias, 
 # target version, and (optional) the current version of your AWS Lambda function. 
 Resources:
-- cobatbc-service: # Replace "MyFunction" with the name of your Lambda function 
+  - webportfolio-service-lambda: # Replace "MyFunction" with the name of your Lambda function 
       Type: AWS::Lambda::Function
       Properties:
-        Name: "cobatbc-service" # Specify the name of your Lambda function
-        Alias: "service1" # Specify the alias for your Lambda function
+        Name: "webportfolio-service-lambda" # Specify the name of your Lambda function
+        Alias: "versi1" # Specify the alias for your Lambda function
         CurrentVersion: "2" # Specify the current version of your Lambda function
-        TargetVersion: "3" # Specify the version of your Lambda function to deploy
+        TargetVersion: "2" # Specify the version of your Lambda function to deploy
+  
 # (Optional) In the Hooks section, specify a validation Lambda function to run during 
 # a lifecycle event. Replace "LifeCycleEvent" with BeforeAllowTraffic
 # or AfterAllowTraffic. 
+
 
