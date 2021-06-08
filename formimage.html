@@ -215,8 +215,9 @@
                                 </div>
 
                             </div>
-                            <button class="text-center" type="button" onclick="s3upload(), callAPI(document.getElementById('name').value,
-                                document.getElementById('email').value)">Submit</button>
+                            <button class="text-center" type="button" onclick="s3upload()">Submit</button>
+                            <!-- , callAPI(document.getElementById('name').value,
+                                document.getElementById('email').value)" -->
                         </form>
 
 
@@ -278,7 +279,7 @@
             if (files) {
                 var file = files[0];
                 var fileName = file.name;
-                var filePath = 'assets/img/invoices' + fileName;
+                var filePath = 'assets/img/invoices/' + fileName;
                 var fileUrl = 'https://' + 'us-east-1' + '.amazonaws.com/websiteport/' +
                     filePath;
 
