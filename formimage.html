@@ -60,40 +60,41 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 
-    <!-- <script>
-        // define the callAPI function that takes a first name and last name as parameters
-        var callAPI = (name, email, subject, message) => {
-            // instantiate a headers object
-            // var ID = parseInt($('#ID').val());
-            // $('#ID').val(ID + 1);
-            var myHeaders = new Headers();
-            // add content type header to object
-            myHeaders.append("Content-Type", "application/json");
-            // using built in JSON utility package turn object to string and store in a variable
-            var raw = JSON.stringify({
-                "name": name,
-                "email": email,
-                "subject": subject,
-                "message": message
-            });
-            // create a JSON object with parameters for API call and store in a variable
-            var requestOptions = {
-                method: 'POST',
-                headers: myHeaders,
-                body: raw,
-                redirect: 'follow'
-            };
-            // make API call with parameters and use promises to get response
-            fetch("https://d1ruz5d2m4.execute-api.us-east-1.amazonaws.com/websiteport-dev", requestOptions)
-                .then(response => response.text())
-                .then(result => alert(JSON.parse(result).body))
-                .catch(error => console.log('error', error));
-        }
-    </script> -->
-
 </head>
 
 <body>
+
+    <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+
+        <!-- <input type="text" name="ID" class="form-control" id="ID" value="0" hidden> -->
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+            </div>
+
+            <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+            </div>
+
+            <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="file" id="fileUpload">
+            </div>
+
+            <progress class="col-md-6 form-group mt-3 mt-md-0" max=”100” value=”0”></progress>
+
+            <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your order has been sent. Thank you!</div>
+            </div>
+
+        </div>
+
+        <button class="text-center" type="button" onclick="callAPI(document.getElementById('name').value,
+    document.getElementById('email').value)">Submit</button>
+
+
+    </form>
 
     <div>
         <input type="file" id="fileUpload">
@@ -145,6 +146,34 @@
                 });
             }
         };
+
+        // define the callAPI function that takes a first name and last name as parameters
+        var callAPI = (name, email) => {
+            // instantiate a headers object
+            // var ID = parseInt($('#ID').val());
+            // $('#ID').val(ID + 1);
+            var myHeaders = new Headers();
+            // add content type header to object
+            myHeaders.append("Content-Type", "application/json");
+            // using built in JSON utility package turn object to string and store in a variable
+            var raw = JSON.stringify({
+                "name": name,
+                "email": email
+            });
+            // create a JSON object with parameters for API call and store in a variable
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+            };
+            // make API call with parameters and use promises to get response
+            fetch("https://8myshtdly3.execute-api.us-east-1.amazonaws.com/devapi-buy",
+                requestOptions) // / itu stage
+                .then(response => response.text())
+                .then(result => alert(JSON.parse(result).body))
+                .catch(error => console.log('error', error));
+        }
     </script>
 </body>
 
