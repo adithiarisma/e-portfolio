@@ -215,10 +215,17 @@
                                 </div>
 
                             </div>
-                            <button class="text-center" type="button" onclick="s3upload()">Submit</button>
+                            <!-- <button class="text-center" type="button" onclick="s3upload()">Submit</button> -->
                             <!-- , callAPI(document.getElementById('name').value,
                                 document.getElementById('email').value)" -->
                         </form>
+
+                        <div class="col-md-6 form-group mt-3 mt-md-0">
+                            <input type="file" id="fileUpload">
+                        </div>
+
+                        <progress class="col-md-6 form-group mt-3 mt-md-0" max=”100” value=”0”></progress>
+                        <button class="text-center" type="button" onclick="s3upload()">Submit</button>
 
 
                     </div>
