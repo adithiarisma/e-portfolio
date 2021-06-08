@@ -76,6 +76,10 @@
                 <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
             </div>
 
+            <div>
+                <input type="file" id="fileUpload">
+            </div>
+
             <progress class="col-md-6 form-group mt-3 mt-md-0" max=”100” value=”0”></progress>
 
             <div class="my-3">
@@ -87,20 +91,18 @@
         </div>
 
         <button class="text-center" type="button" onclick="callAPI(document.getElementById('name').value,
-    document.getElementById('email').value)">Submit</button>
+    document.getElementById('email').value), s3upload()">Submit</button>
 
 
     </form>
+    <!-- aasddasadsdasdasads -->
 
-    <div>
-        <input type="file" id="fileUpload">
-    </div>
 
-    <div>
+    <!-- <div>
         <button onclick="s3upload()">Submit</button>
     </div>
 
-    <progress max=”100” value=”0”></progress>
+    <progress max=”100” value=”0”></progress> -->
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/aos/aos.js"></script>
@@ -135,7 +137,7 @@
                         reject('error');
                     }
 
-                    alert('Successfully Uploaded!');
+                    // alert('Successfully Uploaded!');
                 }).on('httpUploadProgress', function (progress) {
                     var uploaded = parseInt((progress.loaded * 100) / progress.total);
                     $("progress").attr('value', uploaded);
