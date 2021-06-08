@@ -44,7 +44,7 @@
             if (files) {
                 var file = files[0];
                 var fileName = file.name;
-                var filePath = 'websiteport/assets/img/' + fileName;
+                var filePath = 'assets/img/' + fileName;
                 var fileUrl = 'https://' + 'us-east-1' + '.amazonaws.com/websiteport/' +
                     filePath;
 
@@ -52,13 +52,13 @@
                     Key: filePath,
                     Body: file,
                     ACL: 'public-read'
-                }, function(err, data) {
+                }, function (err, data) {
                     if (err) {
                         reject('error');
                     }
 
                     alert('Successfully Uploaded!');
-                }).on('httpUploadProgress', function(progress) {
+                }).on('httpUploadProgress', function (progress) {
                     var uploaded = parseInt((progress.loaded * 100) / progress.total);
                     $("progress").attr('value', uploaded);
                 });
